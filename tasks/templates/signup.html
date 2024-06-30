@@ -1,0 +1,11 @@
+<h1>Hola desde signup</h1>
+
+{{error}}
+
+<form method="post">
+    {% csrf_token %}
+    {{form.as_p}}
+    <button>
+        Signup
+    </button>
+</form>
