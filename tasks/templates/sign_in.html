@@ -2,15 +2,29 @@
 
 
 {% block content %}
-<h1>Login</h1>
 
-{{error}}
+<main class="container">
+    <div class="row">
+        <div class="col-md-4 offset-md-4">
+            <form method="post" action="/sign_in/" class="card card-body mt-5">
+                <h1 class="text-center">Signin</h1>
+                {{error}}
+                {% csrf_token %}
+                <!-- {{form.as_p}} #Funciona para crear un formulario statico el cual vendrá con los datos ya sea de login predefinidos en Django o sino tambien los que esten establecidos en el archivo de forms  -->
+                <div class="mb-3">
+                    <label for="username" class="">Username:</label>
+                    <input type="text" name="username" id="username" class="form-control" placeholder="Write your username">
+                </div>
+                <div class="mb-3">
+                    <label for="password" class="">Password:</label>
+                    <input type="password" name="password" id="password" class="form-control" placeholder="Write your password">
+                </div>
+                <button class="btn btn-primary">
+                    Signin
+                </button>
+            </form>
+        </div>
+    </div>
+</main>
 
-<form action="/sign_in/" method="POST">
-    {% csrf_token %}
-    {{form.as_p}}
-    <button>
-        Signin
-    </button>
-</form>
 {% endblock %}

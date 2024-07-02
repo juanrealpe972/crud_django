@@ -6,6 +6,7 @@ from django.db import IntegrityError
 from .forms import CreateTaskForm
 from .models import Task
 from django.utils import timezone
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 def home(request):
@@ -34,17 +35,6 @@ def signup(request):
                 'form' : UserCreationForm,
                 'error': 'Password do not match'
             })
-        
-def tasks(request): 
-    # tasks =Task.objects.all() #Nos funciona para traer todas las tareas de todos los usuarios
-    tasks =Task.objects.filter(user=request.user, date_completed__isnull=True ) #Nos funciona para traer todas mis tareas
-    return render(request, 'tasks.html', {
-        'tasks': tasks
-    })
-
-def sign_out(request):
-    logout(request)
-    return redirect('home')
 
 def sign_in(request):
     if request.method == "GET":
@@ -62,6 +52,27 @@ def sign_in(request):
             login(request, user)
             return redirect('tasks')
 
+@login_required
+def tasks(request):
+    # tasks =Task.objects.all() #Nos funciona para traer todas las tareas de todos los usuarios
+    tasks =Task.objects.filter(user=request.user, date_completed__isnull=True ) #Nos funciona para traer todas mis tareas
+    return render(request, 'tasks.html', {
+        'tasks': tasks
+    })
+
+@login_required
+def tasks_completed(request):
+    tasks =Task.objects.filter(user=request.user, date_completed__isnull=False).order_by('-date_completed') #Nos funciona para traer todas mis tareas
+    return render(request, 'tasks.html', {
+        'tasks': tasks
+    })
+
+@login_required
+def sign_out(request):
+    logout(request)
+    return redirect('home')
+
+@login_required
 def create_task(request):
     if request.method == "GET":
         return render(request, 'create_task.html', {
@@ -80,6 +91,7 @@ def create_task(request):
                 'error': 'Please provide valida data'
             })
 
+@login_required
 def task_detail(request, task_id):
     if request.method == 'GET':
         # task = Task.objects.get(pk=task_id) #Manera de como se pueden traer los datos de una tarea especifica pero esta en caso de error tumba el servidor
@@ -102,6 +114,7 @@ def task_detail(request, task_id):
                 'error': 'Error updating task'
             })
 
+@login_required
 def complete_task(request, task_id):
     task = get_object_or_404(Task, pk=task_id, user=request.user)
     if request.method == 'POST':
@@ -109,8 +122,10 @@ def complete_task(request, task_id):
         task.save()
         return redirect('tasks')
 
+@login_required
 def delete_task(request, task_id):
     task = get_object_or_404(Task, pk=task_id, user=request.user)
     if request.method == 'POST':
         task.delete()
         return redirect('tasks')
+
