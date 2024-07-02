@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth.models import User
 from django.contrib.auth import login, logout, authenticate
@@ -77,4 +77,26 @@ def create_task(request):
             return render(request, 'create_task.html', {
                 'form' : CreateTaskForm,    
                 'error': 'Please provide valida data'
+            })
+
+def task_detail(request, task_id):
+    if request.method == 'GET':
+        # task = Task.objects.get(pk=task_id) #Manera de como se pueden traer los datos de una tarea especifica pero esta en caso de error tumba el servidor
+        task = get_object_or_404(Task, pk=task_id, user = request.user)
+        form = CreateTaskForm(instance=task)
+        return render(request, 'task_detail.html', {
+            'task': task,
+            'form': form
+        })
+    else:
+        try:
+            task = get_object_or_404(Task, pk=task_id, user = request.user)
+            form = CreateTaskForm(request.POST, instance=task)
+            form.save()
+            return redirect('tasks')
+        except ValueError:
+            return render(request, 'tasks_detail.html', {
+                'task': task,
+                'form': form,
+                'error': 'Error updating task'
             })
