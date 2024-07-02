@@ -4,6 +4,7 @@ from django.contrib.auth.models import User
 from django.contrib.auth import login, logout, authenticate
 from django.db import IntegrityError
 from .forms import CreateTaskForm
+from .models import Task
 
 # Create your views here.
 def home(request):
@@ -34,7 +35,11 @@ def signup(request):
             })
         
 def tasks(request): 
-    return render(request, 'tasks.html')
+    # tasks =Task.objects.all() #Nos funciona para traer todas las tareas de todos los usuarios
+    tasks =Task.objects.filter(user=request.user) #Nos funciona para traer todas mis tareas
+    return render(request, 'tasks.html', {
+        'tasks': tasks
+    })
 
 def sign_out(request):
     logout(request)
@@ -62,7 +67,14 @@ def create_task(request):
             'form' : CreateTaskForm
         })
     else:
-        print(request.POST)
-        return render(request, 'create_task.html', {
-            'form' : CreateTaskForm
-        })
+        try:
+            form = CreateTaskForm(request.POST)
+            new_tasks = form.save(commit=False)
+            new_tasks.user = request.user
+            new_tasks.save()
+            return redirect('tasks')
+        except ValueError:
+            return render(request, 'create_task.html', {
+                'form' : CreateTaskForm,    
+                'error': 'Please provide valida data'
+            })
