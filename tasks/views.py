@@ -57,14 +57,16 @@ def tasks(request):
     # tasks =Task.objects.all() #Nos funciona para traer todas las tareas de todos los usuarios
     tasks =Task.objects.filter(user=request.user, date_completed__isnull=True ) #Nos funciona para traer todas mis tareas
     return render(request, 'tasks.html', {
-        'tasks': tasks
+        'tasks': tasks, 
+        'title': 'Tasks Pending'
     })
 
 @login_required
 def tasks_completed(request):
     tasks =Task.objects.filter(user=request.user, date_completed__isnull=False).order_by('-date_completed') #Nos funciona para traer todas mis tareas
     return render(request, 'tasks.html', {
-        'tasks': tasks
+        'tasks': tasks,
+        'title': 'Tasks Completed'
     })
 
 @login_required

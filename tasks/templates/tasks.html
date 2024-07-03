@@ -4,7 +4,7 @@
 <main class="container my-5">
     <div class="row">
         <div class="col-md-8 offset-md-2">
-            <h1 class="text-center display-4 mb-4">Tareas Pendientes</h1>
+            <h1 class="text-center display-4 mb-4">{{title}}</h1>
             <ul class="list-group">
                 {% for task in tasks %}
                 <a class="list-group-item list-group-item-action mb-2" href="{% url 'task_detail' task.id %}">
@@ -20,7 +20,14 @@
                         <span class="badge bg-secondary">{{task.user.username}}</span>
                     </header>
                     <p class="mb-1">{{task.description}}</p>
-                    <p class="mb-1">{{ task.date_completed|date:"F j, Y, g:i a" }}</p>
+                    <p class="mb-1">
+                        {% if task.date_completed %}
+                            Completed on: {{ task.date_completed|date:"F j, Y, g:i a" }}
+                        {% else %}
+                            Task not completed yet.
+                        {% endif %}
+                    </p>
+                    
                 </a>
                 {% endfor %}
             </ul>

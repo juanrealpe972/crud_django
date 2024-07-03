@@ -3,7 +3,7 @@
 {% block content %}
 <main class="container py-5">
     <section class="card card-body shadow-lg">
-        <h1 class="display-4 text-center mb-3">Django Task</h1>
+        <h1 class="display-4 text-center mb-3">TaskTrack</h1>
         <div class="container">
             <div class="row align-items-center">
                 <div class="col">
@@ -11,15 +11,19 @@
                 </div>
                 <div class="col">
                     <p class="lead text-center">
-                        Django Task is a web application designed to facilitate task management and organization. It allows users to create, read, update and delete (CRUD) tasks efficiently. Developed using Django for server logic and data management, and Bootstrap to create an attractive and responsive user interface. create an attractive and responsive user interface.
+                        TaskTrack is a web application designed to facilitate task management and organization. It allows users to create, read, update and delete (CRUD) tasks efficiently. Developed using Django for server logic and data management, and Bootstrap to create an attractive and responsive user interface. create an attractive and responsive user interface.
                     </p>
                     <div class="text-center">
-                        <a class="btn btn-secondary mx-2" href="/sign_in">
-                            Iniciar Sesión
-                        </a>
-                        <a class="btn btn-secondary mx-2" href="/signup">
-                            Registrarse
-                        </a>
+                        {% if user.is_authenticated %}
+                        <a href="{% url 'tasks' %}" class="btn btn-secondary">View Tasks</a>
+                        {% else %}
+                            <a class="btn btn-secondary mx-2" href="{% url 'sign_in' %}">
+                                Iniciar Sesión
+                            </a>
+                            <a class="btn btn-secondary mx-2" href="{% url 'signup' %}">
+                                Registrarse
+                            </a>
+                        {% endif %}
                     </div>
                 </div>
             </div>
