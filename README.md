@@ -67,16 +67,16 @@ La aplicación estará disponible localmente en http://127.0.0.1:8000/ y tambié
 
 Panel de Administración: Accede a http://127.0.0.1:8000/admin para gestionar usuarios y otras configuraciones del sistema.
 
-## Photo
+## Photos
 
 ### TaskTrack-PC
 **Visualización de la web de TaskTrack en PC.**  
-![TaskTrack-PC](https://co.pinterest.com/pin/618752436351392093/)
+![TaskTrack-PC](https://i.pinimg.com/736x/1d/23/f8/1d23f89a990192dae56cee25a0c04c82.jpg)
 
 ### TaskTrack-Móvil
 **Visualización de la web de TaskTrack en dispositivos móviles.**  
-![TaskTrack-Móvil](https://co.pinterest.com/pin/618752436351392092/)
+![TaskTrack-Móvil](https://i.pinimg.com/736x/fb/b7/6d/fbb76d75447f44e527cde2a043d1371f.jpg)
 
 ### TaskTrack-Tablet
 **Visualización de la web de TaskTrack en tabletas.**  
-![TaskTrack-Tablet](https://co.pinterest.com/pin/618752436351392095/)
+![TaskTrack-Tablet](https://i.pinimg.com/736x/27/72/b6/2772b631d531344039eb03fc60d29e45.jpg)
