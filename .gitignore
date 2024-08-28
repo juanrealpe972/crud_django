@@ -1,3 +1,42 @@
-venv
-__pycache__
+# Entorno virtual
+venv/
+env/
+
+# Archivos de compilación y cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.pdb
+*.pyc
+*.pyo
+*.pyd
+
+# Archivos de bases de datos
 db.sqlite3
+
+# Archivos de configuración de entornos
+*.env
+
+# Archivos de configuración de IDEs
+.idea/
+.vscode/
+
+# Archivos de compilación de paquetes
+*.egg
+*.egg-info
+dist/
+build/
+*.egg
+
+# Archivos de logs
+*.log
+
+# Archivos temporales
+*.tmp
+*.swp
+*.swo
+
+# Archivos de dependencias
+pip-log.txt
+pip-delete-this-directory.txt
