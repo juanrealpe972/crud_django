@@ -63,7 +63,7 @@ Sigue estos pasos para clonar y configurar el proyecto:
 
 Uso
 
-La aplicación estará disponible localmente en http://127.0.0.1:8000/ y también en línea en https://django-projects-u6rw.onrender.com/.
+La aplicación estará disponible localmente en http://127.0.0.1:8000/ y también en línea en https://task-track-drc2.onrender.com/.
 
 Panel de Administración: Accede a http://127.0.0.1:8000/admin para gestionar usuarios y otras configuraciones del sistema.
 
@@ -71,12 +71,12 @@ Panel de Administración: Accede a http://127.0.0.1:8000/admin para gestionar us
 
 ### TaskTrack-PC
 **Visualización de la web de TaskTrack en PC.**  
-![TaskTrack-PC](https://i.pinimg.com/736x/1d/23/f8/1d23f89a990192dae56cee25a0c04c82.jpg)
+<img src="https://i.pinimg.com/736x/1d/23/f8/1d23f89a990192dae56cee25a0c04c82.jpg" width="400" height="300" alt="TaskTrack-PC">
 
 ### TaskTrack-Móvil
 **Visualización de la web de TaskTrack en dispositivos móviles.**  
-![TaskTrack-Móvil](https://i.pinimg.com/736x/fb/b7/6d/fbb76d75447f44e527cde2a043d1371f.jpg)
+<img src="https://i.pinimg.com/736x/fb/b7/6d/fbb76d75447f44e527cde2a043d1371f.jpg" width="400" height="300" alt="TaskTrack-Móvil">
 
 ### TaskTrack-Tablet
 **Visualización de la web de TaskTrack en tabletas.**  
-![TaskTrack-Tablet](https://i.pinimg.com/736x/27/72/b6/2772b631d531344039eb03fc60d29e45.jpg)
+<img src="https://i.pinimg.com/736x/27/72/b6/2772b631d531344039eb03fc60d29e45.jpg" width="400" height="300" alt="TaskTrack-Tablet">
