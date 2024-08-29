@@ -71,12 +71,12 @@ Panel de Administración: Accede a http://127.0.0.1:8000/admin para gestionar us
 
 ### TaskTrack-PC
 **Visualización de la web de TaskTrack en PC.**  
-<img src="https://i.pinimg.com/736x/1d/23/f8/1d23f89a990192dae56cee25a0c04c82.jpg" width="400" height="300" alt="TaskTrack-PC">
+<img src="https://i.pinimg.com/736x/1d/23/f8/1d23f89a990192dae56cee25a0c04c82.jpg" width="250" height="300" alt="TaskTrack-PC">
 
 ### TaskTrack-Móvil
 **Visualización de la web de TaskTrack en dispositivos móviles.**  
-<img src="https://i.pinimg.com/736x/fb/b7/6d/fbb76d75447f44e527cde2a043d1371f.jpg" width="400" height="300" alt="TaskTrack-Móvil">
+<img src="https://i.pinimg.com/736x/fb/b7/6d/fbb76d75447f44e527cde2a043d1371f.jpg" width="200" height="350" alt="TaskTrack-Móvil">
 
 ### TaskTrack-Tablet
 **Visualización de la web de TaskTrack en tabletas.**  
-<img src="https://i.pinimg.com/736x/27/72/b6/2772b631d531344039eb03fc60d29e45.jpg" width="400" height="300" alt="TaskTrack-Tablet">
+<img src="https://i.pinimg.com/736x/27/72/b6/2772b631d531344039eb03fc60d29e45.jpg" width="200" height="350" alt="TaskTrack-Tablet">
